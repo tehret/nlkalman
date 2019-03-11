@@ -81,8 +81,23 @@ int main(int argc, char **argv)
 
 	//! Load input videos
 	original.loadVideo(input_path, firstFrame, lastFrame, frameStep);
-	of.loadFullFlow(of_path, firstFrame, lastFrame, frameStep);
 
+	//! Add noise
+	if (add_noise)
+	{
+		VideoUtils::addNoise(original, noisy, sigma, verbose);
+
+		//! Save noisy video
+		if (verbose) printf("Saving noisy video\n");
+		noisy.saveVideo(noisy_path, firstFrame, frameStep);
+
+        if(patch_size == 0)
+            return EXIT_SUCCESS;
+	}
+	else
+		noisy = original;
+
+	of.loadFullFlow(of_path, firstFrame, lastFrame, frameStep);
 	//! load stabilization matrices
 	float* H = NULL;
 	int nparams, ntransforms, nx, ny;
@@ -95,17 +110,6 @@ int main(int argc, char **argv)
 		return EXIT_FAILURE;
 	}
 
-	//! Add noise
-	if (add_noise)
-	{
-		VideoUtils::addNoise(original, noisy, sigma, verbose);
-
-		//! Save noisy video
-		if (verbose) printf("Saving noisy video\n");
-		noisy.saveVideo(noisy_path, firstFrame, frameStep);
-	}
-	else
-		noisy = original;
 
 	//! Denoising
 	if (verbose) printf("Running NL-Kalman on the noisy video\n");
