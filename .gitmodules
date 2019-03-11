@@ -1,0 +1,3 @@
+[submodule "DCTdenoising"]
+	path = DCTdenoising
+	url = https://github.com/gfacciol/DCTdenoising

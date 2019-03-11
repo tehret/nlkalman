@@ -16,6 +16,10 @@ ICIP 2018". Video examples are available on the
 In order to reproduce the results from the ICIP article a post-processing step consisting
 of applying [DCT denoising](http://www.ipol.im/pub/art/2017/201/) is necessary.
 
+The [DCT denoising](http://www.ipol.im/pub/art/2017/201/) and the [TVL1 optical flow](http://www.ipol.im/pub/art/2013/26/) codes are provided inside this repo in order to centralize
+all code necessary to reproduce the results. Shell script linking the different parts are 
+also provided.
+
 This code is part of an [IPOL](http://www.ipol.im/) publication. Plase cite it
 if you use this code as part of your research. (The article is not already published 
 at this time)
@@ -95,21 +99,21 @@ FILES
 
 This project contains the following source files:
 ```
-	main function:               src/main_nlkalman.cpp
-	command line parsing:        src/cmd_option.h
-	nlkalman implementation:     src/nlkalman/nlkalman.h
-	                             src/nlkalman/nlkalman.cpp
-	parameters container:        src/nlkalman/nlkParams.h
-	Matrix operations:           src/nlkalman/LibMatrix.h
-	                             src/nlkalman/LibMatrix.cpp
-	image i/o:                   src/nlkalman/iio.h
-	                             src/nlkalman/iio.c
-	image container:             src/nlkalman/LibImages.h
-	                             src/nlkalman/LibImages.cpp
-	image container:             src/nlkalman/LibVideoT.hpp
-	                             src/nlkalman/LibVideoT.cpp
-	random number generator:     src/nlkalman/mt19937ar.h
-	                             src/nlkalman/mt19937ar.c
+    main function:               src/main_nlkalman.cpp
+    command line parsing:        src/cmd_option.h
+    nlkalman implementation:     src/nlkalman/nlkalman.h
+                                 src/nlkalman/nlkalman.cpp
+    parameters container:        src/nlkalman/nlkParams.h
+    Matrix operations:           src/nlkalman/LibMatrix.h
+                                 src/nlkalman/LibMatrix.cpp
+    image i/o:                   src/nlkalman/iio.h
+                                 src/nlkalman/iio.c
+    image container:             src/nlkalman/LibImages.h
+                                 src/nlkalman/LibImages.cpp
+    image container:             src/nlkalman/LibVideoT.hpp
+                                 src/nlkalman/LibVideoT.cpp
+    random number generator:     src/nlkalman/mt19937ar.h
+                                 src/nlkalman/mt19937ar.c
     utilities functions:         src/nlkalman/Utilities.h
                                  src/nlkalman/Utilities.cpp
     Parametric trans. functions: src/nlkalman/parametric_transformation.h
