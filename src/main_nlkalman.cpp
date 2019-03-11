@@ -97,7 +97,7 @@ int main(int argc, char **argv)
 	else
 		noisy = original;
 
-	of.loadFullFlow(of_path, firstFrame, lastFrame, frameStep);
+	of.loadFullFlow(of_path, firstFrame, lastFrame-1, frameStep);
 	//! load stabilization matrices
 	float* H = NULL;
 	int nparams, ntransforms, nx, ny;
