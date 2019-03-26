@@ -95,8 +95,8 @@ $ ./nlkalman -i video/i%04d.png -f 0 -l 9 -sigma 20 -of video/flow_%04d.flo
 AUTOMATED SCRIPT USAGE
 ----------------------
 
-/!\ The script has been made for academic purpose. This means that noise are added before
-any processing. Moreover the PSNR at printed at the end is not correct (the PSNR is computed
+/!\ The script has been made for academic purpose. This means that noise is added before
+any processing. Moreover the PSNR printed at the end is not correct (the PSNR is computed
 using the noisy data).
 
 Scripts to run the whole pipeline are also provided. The main script is `script.sh` and is
