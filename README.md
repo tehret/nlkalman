@@ -1,3 +1,5 @@
+**/!\ There's a currently bug in this version of the code and therefore is unable to reproduce the results of the ICIP paper. It will be fixed as soon as possible!**
+
 IMPLEMENTATION OF THE VIDEO DENOISING ALGORITHM NON-LOCAL KALMAN
 ================================================================
 
