@@ -1,5 +1,3 @@
-**/!\ There's a currently bug in this version of the code and therefore is unable to reproduce the results of the ICIP paper. It will be fixed as soon as possible!**
-
 IMPLEMENTATION OF THE VIDEO DENOISING ALGORITHM NON-LOCAL KALMAN
 ================================================================
 
@@ -93,6 +91,34 @@ The command for denoising with a noise standard deviation of 20 should be
 ```
 $ ./nlkalman -i video/i%04d.png -f 0 -l 9 -sigma 20 -of video/flow_%04d.flo
 ```
+
+AUTOMATED SCRIPT USAGE
+----------------------
+
+/!\ The script has been made for academic purpose. This means that noise are added before
+any processing. Moreover the PSNR at printed at the end is not correct (the PSNR is computed
+using the noisy data).
+
+Scripts to run the whole pipeline are also provided. The main script is `script.sh` and is
+the only one that should be called directly (except if you know what you are doing).
+
+The command to run the pipeline is:
+```
+$ ./script.sh inputPath first last sigma sigmaDCT outputPath outputSubPath
+```
+where the mandatory inputs are:
+* `inputPath` the path to the input frames (using the C standard), for example 'frame%03d.png'
+* `first` the index of the first frame, for example '1'
+* `last` the index of the last frame, for example '100'
+* `sigma` the noise standard deviation, for example '30'
+* `sigmaDCT` the noise standard deviation for the DCT post-processing (see below) the path to the input frames (using the C standard), for example '6'
+* `outputPath` the path where the output frames will be saved (using the C standard), for example 'output%03d.png'
+* `outputPathSub` the path where the output (subpixelic) frames will be saved (using the C standard), for example 'outputSub%03d.png'
+
+Recommended values for `sigmaDCT`: 
+* For `sigma`=10: `sigmaDCT`=3
+* For `sigma`=20: `sigmaDCT`=4
+* For `sigma`=30: `sigmaDCT`=6
 
 -----
 

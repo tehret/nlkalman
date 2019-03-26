@@ -49,7 +49,7 @@ int main(int argc, char **argv)
 	const unsigned frameStep  = clo_option("-s", 1, "< Frame step");
 
 	//! General parameters
-	const float sigma = clo_option("-sigma", 0, "< Noise of standard deviation sigma");
+	const float sigma = clo_option("-sigma", 0., "< Noise of standard deviation sigma");
 	const float a = clo_option("-a", 0.9, "< Memory parameter");
 	const float occ = clo_option("-occ", 8.25, "< Occlusion threshold");
 	const bool add_noise = (bool) clo_option("-add_noise", true, "< Add the noise to the input");

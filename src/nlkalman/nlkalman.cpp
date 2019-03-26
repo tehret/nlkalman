@@ -140,7 +140,7 @@ void printNlkParameters(
 	const nlkParams &i_prms
 ){
 	printf("Parameters\n");
-	printf("\tNoise std                     = %d\n"       , i_prms.sigma);
+	printf("\tNoise std                     = %f\n"       , i_prms.sigma);
 	printf("\tPatch search:\n");
 	printf("\t\tPatch size                  = %d\n"       , i_prms.sizePatch);
 	printf("\t\tNumber of patches           = %d\n"       , i_prms.nSimilarPatches);
