@@ -861,9 +861,9 @@ void computeKalmanEstimate(
 		//! Compute eigenvalues-based coefficients of Bayes' filter
 		for (unsigned k = 0; k < r; ++k)
 		{
-			if(i_mat.covEigVals[k] < EIGTHRESH * sigma2)
-				i_mat.covEigVals[k] = 0;
-			else
+			//if(i_mat.covEigVals[k] < EIGTHRESH * sigma2)
+			//	i_mat.covEigVals[k] = 0;
+			//else
 				i_mat.covEigVals[k] = (i_mat.covEigVals[k] < 1e-8f) ? 0 : 1.f / ( 1. + sigma2 / i_mat.covEigVals[k] );
 		}
 
